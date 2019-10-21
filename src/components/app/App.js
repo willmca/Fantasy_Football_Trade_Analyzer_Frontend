@@ -3,10 +3,11 @@ import './App.css';
 import styled from 'styled-components';
 import { Route, Link } from "react-router-dom";
 import Analyzer from './../analyzer/Analyzer'
+import Results from '../results/Results';
 
 const NFLHeader = styled.header`
   background-color: rgba(5,36,86,1);
-  height:100px; 
+  height:70px; 
   width: 100%;
   position: fixed;
   display: flex;
@@ -34,6 +35,7 @@ class App extends Component {
         </NFLHeader>
         <main>
           <Route path="/" exact render = {props => <Analyzer {...props}/>}/>
+          <Route path="/results" exact render = {props => <Results {...props}/>}/>
         </main>
       </div>
   );
