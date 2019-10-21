@@ -7,16 +7,17 @@ class Analyzer extends Component {
     constructor(props){
       super(props)
       this.state={
-        Team1Player1:null,
-        Team1Player2:null,
-        Team1Player3:null,
-        Team1Player4:null,
-        Team2Player1:null,
-        Team2Player2:null,
-        Team2Player3:null,
-        Team2Player4:null
+        Team1Player1:'',
+        Team1Player2:'',
+        Team1Player3:'',
+        Team1Player4:'',
+        Team2Player1:'',
+        Team2Player2:'',
+        Team2Player3:'',
+        Team2Player4:''
        }
        this.handleValueChange = this.handleValueChange.bind(this)
+       this.getPlayers = this.getPlayers.bind(this)
 
     }
     handleValueChange(e) {
@@ -26,6 +27,7 @@ class Analyzer extends Component {
         [name]: value,
       })
     }
+
     render(){
        return (
         <div className="AnalyzerContainer">
@@ -50,7 +52,7 @@ class Analyzer extends Component {
           </div>
         </div>
         <Link to="/results">
-        <div className="getResults">Analyze Trade</div>
+        <div className="getResults" onClick={this.getPlayers}>Analyze Trade</div>
         </Link>
         </div>
     );

@@ -35,7 +35,7 @@ class App extends Component {
         </NFLHeader>
         <main>
           <Route path="/" exact render = {props => <Analyzer {...props}/>}/>
-          <Route path="/results" exact render = {props => <Results {...props}/>}/>
+          <Route path="/results" exact render = {props => <Results {...this.state} {...props}/>}/>
         </main>
       </div>
   );
