@@ -24,9 +24,16 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-
+        players:[]
     }
   }
+
+  componentDidMount() {
+    fetch("https://secret-sea-08486.herokuapp.com/api/player").then(res=>res.json())
+    .then(res => {
+        console.log(res)
+        this.setState({players:res})
+    })}
   render(){
      return (
       <div className="App">
@@ -34,7 +41,7 @@ class App extends Component {
           <h1>Fantasy Football Trade Analyzer</h1>
         </NFLHeader>
         <main>
-          <Route path="/" exact render = {props => <Analyzer {...props}/>}/>
+          <Route path="/" exact render = {props => <Analyzer {...this.state} {...props}/>}/>
           <Route path="/results" exact render = {props => <Results {...this.state} {...props}/>}/>
         </main>
       </div>

@@ -8,16 +8,14 @@ class Analyzer extends Component {
       super(props)
       this.state={
         Team1Player1:'',
-        Team1Player2:'',
-        Team1Player3:'',
-        Team1Player4:'',
         Team2Player1:'',
-        Team2Player2:'',
-        Team2Player3:'',
-        Team2Player4:''
+        Team1Players:[],
+        Team2Players:[]
        }
        this.handleValueChange = this.handleValueChange.bind(this)
-       this.getPlayers = this.getPlayers.bind(this)
+       this.AddPlayerTeam1 = this.AddPlayerTeam1.bind(this)
+       this.AddPlayerTeam2 = this.AddPlayerTeam2.bind(this)
+
 
     }
     handleValueChange(e) {
@@ -26,8 +24,24 @@ class Analyzer extends Component {
         this.setState({
         [name]: value,
       })
+        
     }
 
+    AddPlayerTeam1(evt){
+      evt.preventDefault();
+      var player = (this.props.players.find(player => player.name == this.state.Team1Player1))
+      console.log(player)
+      this.state.Team1Players.push(player)
+    }
+
+    AddPlayerTeam2(evt){
+      evt.preventDefault();
+      var player2 = (this.props.players.find(player => player.name == this.state.Team2Player1))
+      console.log(player2)
+      this.state.Team2Players.push(player2)
+    }
+
+    compo
     render(){
        return (
         <div className="AnalyzerContainer">
@@ -35,25 +49,37 @@ class Analyzer extends Component {
           <div className="team">
             <h1 className="teamName">Team 1</h1>
             <form className="playersSelect">
-              <input name="Team1Player1" value={this.state.Team1Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Player 1"></input>
-              <input name="Team1Player2" value={this.state.Team1Player2} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Player 2"></input>
-              <input name="Team1Player3" value={this.state.Team1Player3} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Player 3"></input>
-              <input name="Team1Player4" value={this.state.Team1Player4} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Player 4"></input>
+              <input name="Team1Player1" value={this.state.Team1Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 1"></input>
+              <button onClick={this.AddPlayerTeam1}>Click to add player to team 1</button>
             </form>
+            <section className="team1PlayerDisplay">
+            {this.state.Team1Players.map((player, i) => (
+              <div key={i}>
+                <h2>{player.name}</h2>
+                <img src={player.photo} alt={player.name}/>
+              </div>
+            ))}
+            </section>
           </div>
           <div className="team">
             <h1 className="teamName">Team 2</h1>
             <form className="playersSelect">
-              <input name="Team2Player1" value={this.state.Team2Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Player 1"></input>
-              <input name="Team2Player2" value={this.state.Team2Player2} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Player 2"></input>
-              <input name="Team2Player3" value={this.state.Team2Player3} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Player 3"></input>
-              <input name="Team2Player4" value={this.state.Team2Player4} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Player 4"></input>
+              <input name="Team2Player1" value={this.state.Team2Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 2"></input>
+              <button onClick={this.AddPlayerTeam2}>Click to add player to team</button>
             </form>
+            <section className="team2PlayerDisplay">
+            {this.state.Team2Players.map((player, i) => (
+              <div key={i}>
+                <h2>{player.name}</h2>
+                <img src={player.photo} alt={player.name}/>
+              </div>
+            ))}
+            </section>
           </div>
         </div>
-        <Link to="/results">
-        <div className="getResults" onClick={this.getPlayers}>Analyze Trade</div>
-        </Link>
+        {/* <Link to="/results"> */}
+        <div className="getResults">Analyze Trade</div>
+        {/* </Link> */}
         </div>
     );
   }

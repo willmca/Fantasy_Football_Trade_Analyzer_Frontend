@@ -4,7 +4,6 @@
     justify-content: space-around;
     margin:0 auto;
     margin-top:150px;
-    height:450px;
     width:90%;
   }
   .team{
@@ -50,3 +49,7 @@
     align-content: center;
     margin-bottom:20px;
     }
+
+.team1PlayerDisplay, .team2PlayerDisplay{
+  text-align:center;
+}
