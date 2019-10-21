@@ -1,0 +1,51 @@
+.teamsContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin:0 auto;
+    margin-top:150px;
+    height:450px;
+    width:90%;
+  }
+  .team{
+    display:flex;
+    flex-direction: column;
+    padding:10px;
+    background-color:rgba(234,234,234,1);
+    width:40%;
+  }
+  .teamName{
+    text-align:center;
+  }
+  .results{
+    width:90%;
+    margin:0 auto;
+    text-align:center;
+    background-color:rgba(234,234,234,1);
+  }
+  .playersSelect{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .playerInput{
+    width:75%;
+    margin-top:15px;
+    height:50px;
+    text-align:center;
+    font-size:22px;
+  }
+  .getResults{
+    text-align: center;
+    margin:0 auto;
+    margin-top:25px;
+    background-color:green;
+    color:white;
+    width:22%;
+    z-index:10;
+    height:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    }
