@@ -12,7 +12,6 @@ class Analyzer extends Component {
         Team2Player1:'',
         Team1Players:[],
         Team2Players:[],
-        button:false,
        }
        this.handleValueChange = this.handleValueChange.bind(this)
        this.AddPlayerTeam1 = this.AddPlayerTeam1.bind(this)
