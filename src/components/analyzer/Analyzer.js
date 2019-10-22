@@ -82,7 +82,7 @@ class Analyzer extends Component {
             <h1 className="teamName">Team 2</h1>
             <form className="playersSelect">
               <input name="Team2Player1" value={this.state.Team2Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 2"></input>
-              <button onClick={this.AddPlayerTeam2}>Click to add player to team</button>
+              <button onClick={this.AddPlayerTeam2}>Click to add player to team 2</button>
             </form>
             <section className="team2PlayerDisplay">
             {this.state.Team2Players.map((player, i) => (
