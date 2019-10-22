@@ -40,6 +40,7 @@ class Analyzer extends Component {
       else{
       console.log(player)
       this.state.Team1Players.push(player)}
+      this.setState({Team1Player1:""})
       this.forceUpdate()
     }
 
@@ -53,6 +54,7 @@ class Analyzer extends Component {
       else{
       console.log(player2)
       this.state.Team2Players.push(player2)
+      this.setState({Team2Player1:""})
       this.forceUpdate()
       }
     }
