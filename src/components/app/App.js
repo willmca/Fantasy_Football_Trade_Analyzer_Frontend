@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Route, Link } from "react-router-dom";
 import Analyzer from './../analyzer/Analyzer'
 import Results from '../results/Results';
+import About from '../about/About';
 
 const NFLHeader = styled.header`
   background-color: rgba(5,36,86,1);
@@ -43,6 +44,7 @@ class App extends Component {
         <main>
           <Route path="/" exact render = {props => <Analyzer {...this.state} {...props}/>}/>
           <Route path="/results" exact render = {props => <Results {...props}/>}/>
+          <Route path="/about" exact render = {props => <About {...props}/>}/>
         </main>
       </div>
   );
