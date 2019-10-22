@@ -58,6 +58,14 @@
 .team1PlayerDisplay, .team2PlayerDisplay{
   text-align:center;
 }
+.addPlayer{
+  background-color: rgba(5,36,86,1);
+  color:white;
+  border:solid white 1px;
+}
+.addPlayer:hover{
+  text-decoration: underline;
+}
 
 @media (max-width:800px){
   .playerInput{

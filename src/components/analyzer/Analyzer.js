@@ -37,9 +37,10 @@ class Analyzer extends Component {
       }
       else{
       // console.log(player)
-      this.state.Team1Players.push(player)}
+      this.state.Team1Players.push(player)
       this.setState({Team1Player1:""})
       this.forceUpdate()
+      }
     }
 
     AddPlayerTeam2(evt){
@@ -65,7 +66,7 @@ class Analyzer extends Component {
             <h1 className="teamName">Team 1</h1>
             <form className="playersSelect">
               <input name="Team1Player1" value={this.state.Team1Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 1"></input>
-              <button onClick={this.AddPlayerTeam1}>Click to add player to team 1</button>
+              <button className="addPlayer" onClick={this.AddPlayerTeam1}>Click to add player to team 1</button>
             </form>
             <section className="team2PlayerDisplay">
             {this.state.Team1Players.map((player, i) => (
@@ -80,7 +81,7 @@ class Analyzer extends Component {
             <h1 className="teamName">Team 2</h1>
             <form className="playersSelect">
               <input name="Team2Player1" value={this.state.Team2Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 2"></input>
-              <button onClick={this.AddPlayerTeam2}>Click to add player to team 2</button>
+              <button className="addPlayer" onClick={this.AddPlayerTeam2}>Click to add player to team 2</button>
             </form>
             <section className="team2PlayerDisplay">
             {this.state.Team2Players.map((player, i) => (
