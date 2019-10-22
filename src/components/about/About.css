@@ -10,3 +10,8 @@
     margin-top:-5px;
     font-size:50px;
 }
+.clickContainers{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

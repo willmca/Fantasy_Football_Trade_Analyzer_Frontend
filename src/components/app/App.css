@@ -2,3 +2,24 @@ img{
   width:100px;
   height:100px;
 }
+.appTitleLink{
+  color:white;
+  text-decoration: none;
+}
+.appTitleLink:hover{
+  text-decoration: underline;
+}
+.homeLink{
+  color:white;
+  text-decoration: none;
+  position:fixed;
+  left:0;
+  padding:20px;
+}
+
+.AboutLink{
+  color:white;
+}
+.AboutLink:hover{
+  transform:scale(1.2);
+}

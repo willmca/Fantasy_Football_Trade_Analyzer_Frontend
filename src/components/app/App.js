@@ -18,6 +18,19 @@ const NFLHeader = styled.header`
   top:0;
   color:white;
 `
+const NFLFooter = styled.footer`
+  background-color: rgba(5,36,86,1);
+  height:35px; 
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  bottom:0;
+  color:white;
+`
+
 
 
 
@@ -39,13 +52,25 @@ class App extends Component {
      return (
       <div className="App">
         <NFLHeader>
+          <Link to="/" className="appTitleLink">
           <h1>Fantasy Football Trade Analyzer</h1>
+          </Link>
+          <Link to="/about" className="aboutLink">
+          </Link>
         </NFLHeader>
         <main>
           <Route path="/" exact render = {props => <Analyzer {...this.state} {...props}/>}/>
           <Route path="/results" exact render = {props => <Results {...props}/>}/>
           <Route path="/about" exact render = {props => <About {...props}/>}/>
         </main>
+        <NFLFooter>
+            <Link to="/" className="AboutLink">
+              <h3>Home</h3>
+            </Link>
+            <Link to="/about" className="AboutLink">
+              <h3>About</h3>
+            </Link>
+        </NFLFooter>
       </div>
   );
 }
