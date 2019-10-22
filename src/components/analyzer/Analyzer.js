@@ -30,7 +30,7 @@ class Analyzer extends Component {
 
     AddPlayerTeam1(evt){
       evt.preventDefault();
-      var player = (this.props.players.find(player => player.name.toLowerCase() === this.state.Team1Player1.toLowerCase()))
+      var player = (this.props.players.find(player => player.name.toLowerCase() === this.state.Team1Player1.trim().toLowerCase()))
       if (!player){
         alert("No player found with the name " + this.state.Team1Player1);
         return;
@@ -45,7 +45,7 @@ class Analyzer extends Component {
 
     AddPlayerTeam2(evt){
       evt.preventDefault();
-      var player2 = (this.props.players.find(player => player.name.toLowerCase() === this.state.Team2Player1.toLowerCase()))
+      var player2 = (this.props.players.find(player => player.name.toLowerCase() === this.state.Team2Player1.trim().toLowerCase()))
       if (!player2){
         alert("No player found with the name " + this.state.Team2Player1)
         return;
