@@ -16,9 +16,21 @@ class Results extends Component {
           <div className="teamsContainer">
           <div className="team">
             <h1 className="teamName">Team 1</h1>
+            {this.props.location.state.Team1Players.map((player, i) => (
+              <div key={i}>
+                <h2>{player.name}</h2>
+                <img src={player.photo} alt={player.name}/>
+              </div>
+            ) )}
           </div>
           <div className="team">
             <h1 className="teamName">Team 2</h1>
+            {this.props.location.state.Team2Players.map((player, i) => (
+              <div key={i}>
+                <h2>{player.name}</h2>
+                <img src={player.photo} alt={player.name}/>
+              </div>
+            ))}
           </div>
         </div>
         <div className="results">

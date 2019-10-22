@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Route, Link} from 'react-router-dom'
+import Results from '../results/Results'
+import styled from 'styled-components'
 import './Analyzer.css'
+
 
 
 class Analyzer extends Component {
@@ -37,6 +40,7 @@ class Analyzer extends Component {
       else{
       console.log(player)
       this.state.Team1Players.push(player)}
+      this.forceUpdate()
     }
 
     AddPlayerTeam2(evt){
@@ -49,10 +53,10 @@ class Analyzer extends Component {
       else{
       console.log(player2)
       this.state.Team2Players.push(player2)
+      this.forceUpdate()
       }
     }
-
-    compo
+    
     render(){
        return (
         <div className="AnalyzerContainer">
@@ -63,15 +67,15 @@ class Analyzer extends Component {
               <input name="Team1Player1" value={this.state.Team1Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 1"></input>
               <button onClick={this.AddPlayerTeam1}>Click to add player to team 1</button>
             </form>
-            <section className="team1PlayerDisplay">
+            <section className="team2PlayerDisplay">
             {this.state.Team1Players.map((player, i) => (
               <div key={i}>
                 <h2>{player.name}</h2>
                 <img src={player.photo} alt={player.name}/>
               </div>
             ))}
-            </section>
-          </div>
+            </section>          
+            </div>
           <div className="team">
             <h1 className="teamName">Team 2</h1>
             <form className="playersSelect">
@@ -88,9 +92,13 @@ class Analyzer extends Component {
             </section>
           </div>
         </div>
-        {/* <Link to="/results"> */}
+        <Link 
+    to={{ 
+    pathname: '/results', 
+    state: { ...this.state } 
+    }}>
         <div className="getResults">Analyze Trade</div>
-        {/* </Link> */}
+        </Link>
         </div>
     );
   }
