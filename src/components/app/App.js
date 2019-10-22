@@ -53,7 +53,7 @@ class App extends Component {
       <div className="App">
         <NFLHeader>
           <Link to="/" className="appTitleLink">
-          <h1>Fantasy Football Trade Analyzer</h1>
+          <h1 className="appTitle">Fantasy Football Trade Analyzer</h1>
           </Link>
           <Link to="/about" className="aboutLink">
           </Link>

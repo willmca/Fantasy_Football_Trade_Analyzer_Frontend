@@ -78,6 +78,7 @@
   .teamsContainer{
     flex-direction: column;
     align-items:center;
+    margin-top:75px;
   }
   .team{
     width:90%;
@@ -85,5 +86,8 @@
   }
   .playerInput{
     font-size:20px;
+  }
+  .getResults{
+    margin-bottom:50px;
   }
 }
