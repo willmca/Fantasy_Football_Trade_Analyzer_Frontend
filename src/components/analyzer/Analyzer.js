@@ -11,7 +11,8 @@ class Analyzer extends Component {
         Team1Player1:'',
         Team2Player1:'',
         Team1Players:[],
-        Team2Players:[]
+        Team2Players:[],
+        button:false,
        }
        this.handleValueChange = this.handleValueChange.bind(this)
        this.AddPlayerTeam1 = this.AddPlayerTeam1.bind(this)
@@ -92,6 +93,7 @@ class Analyzer extends Component {
             </section>
           </div>
         </div>
+        {this.state.Team2Players.length > 0 && this.state.Team1Players.length > 0 &&
         <Link 
     to={{ 
     pathname: '/results', 
@@ -99,6 +101,7 @@ class Analyzer extends Component {
     }}>
         <div className="getResults">Analyze Trade</div>
         </Link>
+        }
         </div>
     );
   }
