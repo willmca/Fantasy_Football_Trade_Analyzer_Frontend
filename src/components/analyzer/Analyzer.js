@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Link} from 'react-router-dom'
-import Results from '../results/Results'
-import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 import './Analyzer.css'
 
 
@@ -32,13 +30,13 @@ class Analyzer extends Component {
 
     AddPlayerTeam1(evt){
       evt.preventDefault();
-      var player = (this.props.players.find(player => player.name.toLowerCase() == this.state.Team1Player1.toLowerCase()))
+      var player = (this.props.players.find(player => player.name.toLowerCase() === this.state.Team1Player1.toLowerCase()))
       if (!player){
         alert("No player found with the name " + this.state.Team1Player1);
         return;
       }
       else{
-      console.log(player)
+      // console.log(player)
       this.state.Team1Players.push(player)}
       this.setState({Team1Player1:""})
       this.forceUpdate()
@@ -46,13 +44,13 @@ class Analyzer extends Component {
 
     AddPlayerTeam2(evt){
       evt.preventDefault();
-      var player2 = (this.props.players.find(player => player.name.toLowerCase() == this.state.Team2Player1.toLowerCase()))
+      var player2 = (this.props.players.find(player => player.name.toLowerCase() === this.state.Team2Player1.toLowerCase()))
       if (!player2){
         alert("No player found with the name " + this.state.Team2Player1)
         return;
       }
       else{
-      console.log(player2)
+      // console.log(player2)
       this.state.Team2Players.push(player2)
       this.setState({Team2Player1:""})
       this.forceUpdate()

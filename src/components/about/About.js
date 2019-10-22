@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import './About.css'
 
 class About extends Component {
     constructor(props){
-        super(props)
      }
     render(){
         return(

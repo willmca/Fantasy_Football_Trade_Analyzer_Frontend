@@ -45,7 +45,7 @@ class App extends Component {
   componentDidMount() {
     fetch("https://secret-sea-08486.herokuapp.com/api/player").then(res=>res.json())
     .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setState({players:res})
     })}
   render(){

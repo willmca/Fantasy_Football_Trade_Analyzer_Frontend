@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './Results.css'
 
 
@@ -13,7 +13,6 @@ class Results extends Component {
     }
 
     whoWon(){
-      var tradeWinner 
       if (this.props.location.state.Team1Players.length > this.props.location.state.Team2Players.length){
         this.setState({tradeWinner:"Team 1"})
       } else if ((this.props.location.state.Team1Players.length < this.props.location.state.Team2Players.length)){
