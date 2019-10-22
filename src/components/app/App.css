@@ -2,6 +2,9 @@ img{
   width:100px;
   height:100px;
 }
+main{
+  margin-bottom:75px;
+}
 .appTitleLink{
   color:white;
   text-decoration: none;
