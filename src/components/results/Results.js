@@ -14,10 +14,12 @@ class Results extends Component {
     whoWon(){
       var team1Total = this.props.location.state.team1Sum
       var team2Total = this.props.location.state.team2Sum
+      var sumIfTeam1Won = team1Total - team2Total
+      var sumIfTeam2Won = team2Total - team1Total
       if (team1Total > team2Total){
-        this.setState({tradeWinner:`Team 1 is the stronger side of this trade by ${team1Total.toFixed(2) - team2Total.toFixed(2)} points.`})
+        this.setState({tradeWinner:`Team 1 is the stronger side of this trade by ${sumIfTeam1Won.toFixed(2)} points.`})
       } else if ((team1Total < team2Total)){
-        this.setState({tradeWinner:`Team 2 is the stronger side of this trade by ${team2Total.toFixed(2) - team1Total.toFixed(2)} points.`})
+        this.setState({tradeWinner:`Team 2 is the stronger side of this trade by ${sumIfTeam2Won.toFixed(2)} points.`})
       } else {
         this.setState({tradeWinner:"This is an equal trade."})
       }
