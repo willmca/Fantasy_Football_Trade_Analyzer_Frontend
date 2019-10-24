@@ -15,9 +15,9 @@ class Results extends Component {
       var team1Total = this.props.location.state.team1Sum
       var team2Total = this.props.location.state.team2Sum
       if (team1Total > team2Total){
-        this.setState({tradeWinner:`Team 1 is the stronger side of this trade by ${team1Total - team2Total} points.`})
+        this.setState({tradeWinner:`Team 1 is the stronger side of this trade by ${team1Total.toFixed(2) - team2Total.toFixed(2)} points.`})
       } else if ((team1Total < team2Total)){
-        this.setState({tradeWinner:`Team 2 is the stronger side of this trade by ${team2Total - team1Total} points.`})
+        this.setState({tradeWinner:`Team 2 is the stronger side of this trade by ${team2Total.toFixed(2) - team1Total.toFixed(2)} points.`})
       } else {
         this.setState({tradeWinner:"This is an equal trade."})
       }
@@ -35,9 +35,9 @@ class Results extends Component {
             {this.props.location.state.Team1Players.map((player, i) => (
               <div key={i}>
                 <h2>{player.Name}</h2>
-                <h3>{player.Position}, {player.Team}</h3>
                 <img src={player.PhotoURL} alt={player.Name}/>
-                <h4>{player.Rating}</h4>
+                <h3>{player.Position}, {player.Team}</h3>
+                <h4>{player.Rating.toFixed(2)}</h4>
               </div>
             ) )}
             <h1>Total rating: {this.props.location.state.team1Sum}</h1>
@@ -47,12 +47,12 @@ class Results extends Component {
             {this.props.location.state.Team2Players.map((player, i) => (
               <div key={i}>
                 <h2>{player.Name}</h2>
-                <h3>{player.Position}, {player.Team}</h3>
                 <img src={player.PhotoURL} alt={player.Name}/>
-                <h4>{player.Rating}</h4>
+                <h3>{player.Position}, {player.Team}</h3>
+                <h4>{player.Rating.toFixed(2)}</h4>
               </div>
             ))}
-            <h1>Total rating: {this.props.location.state.team2Sum}</h1>
+            <h1>Total rating: {this.props.location.state.team2Sum.toFixed(2)}</h1>
           </div>
         </div>
         <div className="results">

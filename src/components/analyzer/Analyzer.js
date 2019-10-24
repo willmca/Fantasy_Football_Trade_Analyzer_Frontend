@@ -78,8 +78,8 @@ class Analyzer extends Component {
             {this.state.Team1Players.map((player, i) => (
               <div key={i}>
                 <h2>{player.Name}</h2>
-                <h3>{player.Position}, {player.Team}</h3>
                 <img src={player.PhotoURL} alt={player.Name}/>
+                <h3>{player.Position}, {player.Team}</h3>
               </div>
             ))}
             </section>          
@@ -94,8 +94,8 @@ class Analyzer extends Component {
             {this.state.Team2Players.map((player, i) => (
               <div key={i}>
                 <h2>{player.Name}</h2>
-                <h3>{player.Position}, {player.Team}</h3>
                 <img src={player.PhotoURL} alt={player.Name}/>
+                <h3>{player.Position}, {player.Team}</h3>
               </div>
             ))}
             </section>
