@@ -8,17 +8,18 @@ class Results extends Component {
     constructor(props){
       super(props)
       this.state={
-          tradeWinner : ""
+          tradeWinner : "",
       }
     }
-
     whoWon(){
-      if (this.props.location.state.Team1Players.length > this.props.location.state.Team2Players.length){
-        this.setState({tradeWinner:"Team 1"})
-      } else if ((this.props.location.state.Team1Players.length < this.props.location.state.Team2Players.length)){
-        this.setState({tradeWinner:"Team 2"})
+      var team1Total = this.props.location.state.team1Sum
+      var team2Total = this.props.location.state.team2Sum
+      if (team1Total > team2Total){
+        this.setState({tradeWinner:`Team 1 is the stronger side of this trade by ${team1Total - team2Total} points.`})
+      } else if ((team1Total < team2Total)){
+        this.setState({tradeWinner:`Team 2 is the stronger side of this trade by ${team2Total - team1Total} points.`})
       } else {
-        this.setState({tradeWinner:"Neither team"})
+        this.setState({tradeWinner:"This is an equal trade."})
       }
     }
   
@@ -33,23 +34,29 @@ class Results extends Component {
             <h1 className="teamName">Team 1</h1>
             {this.props.location.state.Team1Players.map((player, i) => (
               <div key={i}>
-                <h2>{player.name}</h2>
-                <img src={player.photo} alt={player.name}/>
+                <h2>{player.Name}</h2>
+                <h3>{player.Position}, {player.Team}</h3>
+                <img src={player.PhotoURL} alt={player.Name}/>
+                <h4>{player.Rating}</h4>
               </div>
             ) )}
+            <h1>Total rating: {this.props.location.state.team1Sum}</h1>
           </div>
           <div className="team">
             <h1 className="teamName">Team 2</h1>
             {this.props.location.state.Team2Players.map((player, i) => (
               <div key={i}>
-                <h2>{player.name}</h2>
-                <img src={player.photo} alt={player.name}/>
+                <h2>{player.Name}</h2>
+                <h3>{player.Position}, {player.Team}</h3>
+                <img src={player.PhotoURL} alt={player.Name}/>
+                <h4>{player.Rating}</h4>
               </div>
             ))}
+            <h1>Total rating: {this.props.location.state.team2Sum}</h1>
           </div>
         </div>
         <div className="results">
-          <h3>{this.state.tradeWinner} is getting the best of this trade, receiving players with a total rating of _______</h3>
+          <h3>{this.state.tradeWinner}</h3>
           <Link to="/"><h4>Click here to analyze another trade</h4></Link>
         </div>
         </div>

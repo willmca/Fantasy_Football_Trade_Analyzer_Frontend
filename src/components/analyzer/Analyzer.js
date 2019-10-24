@@ -12,6 +12,8 @@ class Analyzer extends Component {
         Team2Player1:'',
         Team1Players:[],
         Team2Players:[],
+        team1Sum:0,
+        team2Sum:0
        }
        this.handleValueChange = this.handleValueChange.bind(this)
        this.AddPlayerTeam1 = this.AddPlayerTeam1.bind(this)
@@ -30,30 +32,34 @@ class Analyzer extends Component {
 
     AddPlayerTeam1(evt){
       evt.preventDefault();
-      var player = (this.props.players.find(player => player.name.toLowerCase() === this.state.Team1Player1.trim().toLowerCase()))
+      var player = (this.props.players.find(player => player.Name.toLowerCase() === this.state.Team1Player1.trim().toLowerCase()))
       if (!player){
         alert("No player found with the name " + this.state.Team1Player1);
         return;
       }
       else{
       // console.log(player)
+      let team1Sum = this.state.team1Sum
       this.state.Team1Players.push(player)
       this.setState({Team1Player1:""})
+      this.setState({team1Sum: team1Sum += player.Rating})
       this.forceUpdate()
       }
     }
 
     AddPlayerTeam2(evt){
       evt.preventDefault();
-      var player2 = (this.props.players.find(player => player.name.toLowerCase() === this.state.Team2Player1.trim().toLowerCase()))
+      var player2 = (this.props.players.find(player => player.Name.toLowerCase() === this.state.Team2Player1.trim().toLowerCase()))
       if (!player2){
         alert("No player found with the name " + this.state.Team2Player1)
         return;
       }
       else{
       // console.log(player2)
+      let team2Sum = this.state.team2Sum
       this.state.Team2Players.push(player2)
       this.setState({Team2Player1:""})
+      this.setState({team2Sum: team2Sum += player2.Rating})
       this.forceUpdate()
       }
     }
@@ -71,8 +77,9 @@ class Analyzer extends Component {
             <section className="team2PlayerDisplay">
             {this.state.Team1Players.map((player, i) => (
               <div key={i}>
-                <h2>{player.name}</h2>
-                <img src={player.photo} alt={player.name}/>
+                <h2>{player.Name}</h2>
+                <h3>{player.Position}, {player.Team}</h3>
+                <img src={player.PhotoURL} alt={player.Name}/>
               </div>
             ))}
             </section>          
@@ -86,8 +93,9 @@ class Analyzer extends Component {
             <section className="team2PlayerDisplay">
             {this.state.Team2Players.map((player, i) => (
               <div key={i}>
-                <h2>{player.name}</h2>
-                <img src={player.photo} alt={player.name}/>
+                <h2>{player.Name}</h2>
+                <h3>{player.Position}, {player.Team}</h3>
+                <img src={player.PhotoURL} alt={player.Name}/>
               </div>
             ))}
             </section>
