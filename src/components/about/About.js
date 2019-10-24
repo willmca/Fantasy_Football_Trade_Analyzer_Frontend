@@ -14,12 +14,13 @@ class About extends Component {
                     <h2>Player Rating Forumla</h2>
                     <p>As of now, the trade analyzer does not account for a players existing team, and only evaluats the players in a vaccum. The player ratings used in the trade analyzer come from the following formula, which makes use of the rest-of-season PPR rankings from Fantasypros:</p>
 
-                    <p>Y = player rating from 0.05 - 15
-                    X = Player ranking according to fantasypros rest of season rankings
+                    <p>Y = player rating from 0.05 - 15</p>
+                    <p>X = Player ranking according to fantasypros rest of season rankings</p>
+                    <p>Y = 15 - ((x-1) * 0.05)</p>
+                    <h2>Current limitations</h2>
+                    <p>Currently, the player pool only includes the top 300 players based on FantasyPros Rest of Season Rankings (PPR scoring). Additionally, player names must be spelled perfectly. Players with abbreviations in their first name must have a "." between the letters. </p>
+                    <p>Ex: AJ Green must be entered: "A.J. Green"</p>
 
-                    Formula:
-                    Y = 15 - ((x-1) * 0.05)
-                    </p>
                     <h2>Questions?</h2>
                     <p>If you have any questions or feedback regarding the project, I can be reached by email at mcallister.william.r@gmail.com</p>
             </div>
