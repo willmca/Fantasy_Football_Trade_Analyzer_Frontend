@@ -47,7 +47,10 @@ class App extends Component {
     .then(res => {
         // console.log(res)
         this.setState({players:res})
-    })}
+    })
+    .catch(err =>
+      alert("Failure to retreive data. Please refresh and try again")
+    )}
   render(){
      return (
       <div className="App">
