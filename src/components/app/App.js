@@ -70,7 +70,7 @@ class App extends Component {
             <Link to="/" className="AboutLink">
               <h3>Home</h3>
             </Link>
-              <h6>Updated 10/23/2019</h6>
+              <h6>Ratings Updated 10/30/2019</h6>
             <Link to="/about" className="AboutLink">
               <h3>About</h3>
             </Link>
