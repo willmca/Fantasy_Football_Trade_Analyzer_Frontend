@@ -15,4 +15,5 @@ I plan on maintaining this project throughout the Fantasy Football Season, and e
 **Links**
 
 Deployed Application: https://fantasy-football-trade-analyzer.netlify.com/
+
 Back-end Repo: https://github.com/willmca/Fantasy_Football_Trade_Analyzer_Backend
