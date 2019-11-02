@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import './Analyzer.css'
-
-
+import { Select } from "react-select-virtualized";
+import { Creatable } from 'react-select-virtualized';
 
 class Analyzer extends Component {
     constructor(props){
@@ -13,28 +13,31 @@ class Analyzer extends Component {
         Team1Players:[],
         Team2Players:[],
         team1Sum:0,
-        team2Sum:0
+        team2Sum:0,
+        selectValue:'',
+        selectValue2:''
        }
-       this.handleValueChange = this.handleValueChange.bind(this)
+      //  this.handleValueChange = this.handleValueChange.bind(this)
        this.AddPlayerTeam1 = this.AddPlayerTeam1.bind(this)
        this.AddPlayerTeam2 = this.AddPlayerTeam2.bind(this)
 
 
     }
-    handleValueChange(e) {
-        const name = e.target.name;
-        const value = e.target.value;
-        this.setState({
-        [name]: value,
-      })
+    // handleValueChange(e) {
+    //     const name = e.target.name;
+    //     const value = e.target.value;
+    //     this.setState({
+    //     [name]: value,
+    //   })
         
-    }
+    // }
 
+    
     AddPlayerTeam1(evt){
       evt.preventDefault();
-      var player = (this.props.players.find(player => player.Name.toLowerCase() === this.state.Team1Player1.trim().toLowerCase()))
+      var player = (this.props.players.find(player => player.Name === this.state.selectValue.label))
       if (!player){
-        alert("No player found with the name " + this.state.Team1Player1);
+        alert("No player found with the name " + this.state.selectValue.label);
         return;
       }
       else{
@@ -46,10 +49,11 @@ class Analyzer extends Component {
       this.forceUpdate()
       }
     }
+    
 
     AddPlayerTeam2(evt){
       evt.preventDefault();
-      var player2 = (this.props.players.find(player => player.Name.toLowerCase() === this.state.Team2Player1.trim().toLowerCase()))
+      var player2 = (this.props.players.find(player => player.Name === this.state.selectValue2.label))
       if (!player2){
         alert("No player found with the name " + this.state.Team2Player1)
         return;
@@ -63,15 +67,31 @@ class Analyzer extends Component {
       this.forceUpdate()
       }
     }
-    
+   
     render(){
+      const options = Array.from(this.props.players, (Player, index) => ({
+        label: Player.Name,
+        value: Player.Rating
+      }));
+      console.log(options)
+      // const options=[
+      //   {
+      //     value:1,
+      //     label:"yo"
+      //   },
+      //   {
+      //     value:2,
+      //     label:"hello"
+      //   }
+      // ]
        return (
         <div className="AnalyzerContainer">
           <div className="teamsContainer">
           <div className="team">
             <h1 className="teamName">Team 1</h1>
             <form className="playersSelect">
-              <input name="Team1Player1" value={this.state.Team1Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 1"></input>
+            <Select options={options} name="Team1Player1" value={this.state.selectValue} className="playerInput" onChange={(selectValue) => this.setState({ selectValue })}placeholder="Add a player to Team 1" />
+              {/* <input name="Team1Player1" value={this.state.Team1Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 1"></input> */}
               <button className="addPlayer" onClick={this.AddPlayerTeam1}>Click to add player to team 1</button>
             </form>
             <section className="team2PlayerDisplay">
@@ -86,10 +106,11 @@ class Analyzer extends Component {
             </div>
           <div className="team">
             <h1 className="teamName">Team 2</h1>
-            <form className="playersSelect">
-              <input name="Team2Player1" value={this.state.Team2Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 2"></input>
+            <Select options={options} name="Team2Player1" value={this.state.selectValue2} className="playerInput" onChange={(selectValue2) => this.setState({ selectValue2 })}placeholder="Add a player to Team 2" />
+            { <form className="playersSelect">
+              {/* <input name="Team2Player1" value={this.state.Team2Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 2"></input> */}
               <button className="addPlayer" onClick={this.AddPlayerTeam2}>Click to add player to team 2</button>
-            </form>
+            </form> }
             <section className="team2PlayerDisplay">
             {this.state.Team2Players.map((player, i) => (
               <div key={i}>
