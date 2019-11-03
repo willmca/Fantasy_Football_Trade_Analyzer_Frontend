@@ -34,7 +34,9 @@
     height:50px;
     text-align:center;
     font-size:22px;
+    margin:0 auto;
     margin-bottom:15px;
+
   }
   .getResults{
     text-align: center;
@@ -70,6 +72,9 @@
 img{
   width:75%;
   height:75%;
+}
+Select{
+  text-align: center;
 }
 
 @media (max-width:800px){

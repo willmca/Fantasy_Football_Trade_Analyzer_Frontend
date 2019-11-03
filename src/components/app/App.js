@@ -17,6 +17,7 @@ const NFLHeader = styled.header`
   justify-content: center;
   top:0;
   color:white;
+  z-index:10;
 `
 const NFLFooter = styled.footer`
   background-color: rgba(5,36,86,1);

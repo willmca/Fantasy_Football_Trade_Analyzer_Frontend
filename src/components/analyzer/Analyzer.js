@@ -44,7 +44,7 @@ class Analyzer extends Component {
       // console.log(player)
       let team1Sum = this.state.team1Sum
       this.state.Team1Players.push(player)
-      this.setState({Team1Player1:""})
+      this.setState({selectValue:""})
       this.setState({team1Sum: team1Sum += player.Rating})
       this.forceUpdate()
       }
@@ -62,7 +62,7 @@ class Analyzer extends Component {
       // console.log(player2)
       let team2Sum = this.state.team2Sum
       this.state.Team2Players.push(player2)
-      this.setState({Team2Player1:""})
+      this.setState({selectValue2:""})
       this.setState({team2Sum: team2Sum += player2.Rating})
       this.forceUpdate()
       }
@@ -90,7 +90,8 @@ class Analyzer extends Component {
           <div className="team">
             <h1 className="teamName">Team 1</h1>
             <form className="playersSelect">
-            <Select options={options} name="Team1Player1" value={this.state.selectValue} className="playerInput" onChange={(selectValue) => this.setState({ selectValue })}placeholder="Add a player to Team 1" />
+            <Select   maxMenuHeight={155}
+            minimumInputSearch={1} options={options} name="Team1Player1" value={this.state.selectValue} className="playerInput" onChange={(selectValue) => this.setState({ selectValue })}placeholder="Add a player to Team 1" />
               {/* <input name="Team1Player1" value={this.state.Team1Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 1"></input> */}
               <button className="addPlayer" onClick={this.AddPlayerTeam1}>Click to add player to team 1</button>
             </form>
@@ -106,7 +107,7 @@ class Analyzer extends Component {
             </div>
           <div className="team">
             <h1 className="teamName">Team 2</h1>
-            <Select options={options} name="Team2Player1" value={this.state.selectValue2} className="playerInput" onChange={(selectValue2) => this.setState({ selectValue2 })}placeholder="Add a player to Team 2" />
+            <Select maxMenuHeight={155} minimumInputSearch={1} maxHeight={1} options={options} name="Team2Player1" value={this.state.selectValue2} className="playerInput" onChange={(selectValue2) => this.setState({ selectValue2 })}placeholder="Add a player to Team 2" />
             { <form className="playersSelect">
               {/* <input name="Team2Player1" value={this.state.Team2Player1} onChange={this.handleValueChange} className="playerInput" type = "text" placeholder="Add a player to Team 2"></input> */}
               <button className="addPlayer" onClick={this.AddPlayerTeam2}>Click to add player to team 2</button>
