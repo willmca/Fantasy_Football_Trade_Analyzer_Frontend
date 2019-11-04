@@ -1,68 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Fantasy Football Trade Analyzer Front-End**
 
-## Available Scripts
+My Fantasy Football Trade Analyzer is a full-stack application that utilizes a front-end built in React and a back-end built with Express, Node, and Mongoose. As a Software Engineer and an avid fantasy football fan, this was the perfect project to combine my two passions. The application uses an algorithm I developed that converts FantasyPros' Rest of Season rankings into a player rating fom 0.05 to 15, and uses those player ratings to evaluate a trade.
 
-In the project directory, you can run:
+**Build Status**
 
-### `npm start`
+I plan on maintaining this project throughout the Fantasy Football Season, and each season going forward. The front-end will see small tweaks to improve the look, but the majority of the maintenance work will be done on the back end. At a minimum you can expect to see weekly updates to this repo to indicate that player ratings have been updated, but I plan on visually enhancing it as well.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Known bugs/Planned fixes**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-Currently, player names must be spelled exactly correct for players to be found. I plan on changing this to allow for misspellings
+-Currently, player names must be fully typed in by the user. I plan on implementing an auto-complete feature that will suggest player names as the user types
+-Currently, I am manually updating player ratings each week. To keep things doable I am only using the top 300 players according to FantasyPros rankings and only updating ratings each week. I have plans to utilize a web scraper to help with the process of updating rankings which would result in more players being included in the player pool and more frequent updates.
 
-### `npm test`
+**Links**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Deployed Application: https://fantasy-football-trade-analyzer.netlify.com/
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Back-end Repo: https://github.com/willmca/Fantasy_Football_Trade_Analyzer_Backend
