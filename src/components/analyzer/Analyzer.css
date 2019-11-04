@@ -73,23 +73,28 @@ img{
   width:75%;
   height:75%;
 }
-Select{
+.playerInput{
+  font-size: 22px;
   text-align: center;
 }
-
-@media (max-width:800px){
+@media (max-width:1000px){
   .playerInput{
     font-size:18px;
   }
 }
-@media (max-width:720px){
-  .playerInput{
-    font-size:16px;
-  }
-}
-@media (max-width:620px){
+@media (max-width:900px){
   .playerInput{
     font-size:14px;
+  }
+}
+@media (max-width:750px){
+  .playerInput{
+    font-size:10px;
+  }
+}
+@media (max-width:600px){
+  .playerInput{
+    font-size:8px;
   }
 }
 @media (max-width:550px){
@@ -103,7 +108,7 @@ Select{
     margin-top:10px;
   }
   .playerInput{
-    font-size:20px;
+    font-size:22px;
   }
   .getResults{
     margin-bottom:50px;
