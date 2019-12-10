@@ -18,8 +18,8 @@ class About extends Component {
                     <p>X = Player ranking according to fantasypros rest of season rankings</p>
                     <p>Y = 15 - ((x-1) * 0.05)</p>
                     <h2>Current limitations</h2>
-                    <p>Currently, the player pool only includes the top 300 players based on FantasyPros Rest of Season Rankings (PPR scoring). Additionally, player names must be spelled perfectly. Players with abbreviations in their first name must have a "." between the letters. </p>
-                    <p>Ex: AJ Green must be entered: "A.J. Green"</p>
+                    <p>Currently, the player pool only includes the top 300 players based on FantasyPros Rest of Season Rankings (PPR scoring)</p>
+
 
                     <h2>Questions?</h2>
                     <p>If you have any questions or feedback regarding the project, I can be reached by email at mcallister.william.r@gmail.com</p>

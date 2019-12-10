@@ -8,8 +8,7 @@ I plan on maintaining this project throughout the Fantasy Football Season, and e
 
 **Known bugs/Planned fixes**
 
--Currently, player names must be spelled exactly correct for players to be found. I plan on changing this to allow for misspellings
--Currently, player names must be fully typed in by the user. I plan on implementing an auto-complete feature that will suggest player names as the user types
+
 -Currently, I am manually updating player ratings each week. To keep things doable I am only using the top 300 players according to FantasyPros rankings and only updating ratings each week. I have plans to utilize a web scraper to help with the process of updating rankings which would result in more players being included in the player pool and more frequent updates.
 
 **Links**
